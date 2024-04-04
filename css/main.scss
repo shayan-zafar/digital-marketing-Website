@@ -1,0 +1,792 @@
+@import './theme-colours';
+@import "./swiper";
+
+.scrolled {
+    background: $bluegrey;
+    // background: linear-gradient(90deg, rgba(162,194,196,1) 0%, rgba(245,244,207,1) 100%);
+    transition: all 0.3s linear;
+}
+
+////
+/// 
+/// 
+/// 
+/// STYLING NAVBAR/////
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+nav {
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+
+        i {
+            font-size: 3rem;
+            color: $darkyellow;
+        }
+
+        span {
+            color: black;
+            font-family: outfit;
+            text-transform: capitalize;
+            font-size: 2rem;
+            font-weight: 650;
+        }
+    }
+
+    .navbar-nav {
+        a {
+            font-family: outfit;
+            color: black;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s linear;
+
+            &:hover {
+                border-bottom: 2px solid $darkyellow;
+                color: $darkyellow;
+            }
+        }
+    }
+
+    .nav-btns {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        button {
+            border: 0;
+            background-color: $darkyellow;
+            // background-color: transparent;
+            padding: 0.4rem 0.75rem;
+            border-radius: 0.25rem;
+            display: inline-flex;
+            align-items: center;
+
+            span {
+                font-family: outfit;
+                color: black;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                font-weight: 800;
+
+            }
+        }
+
+        .get_started {
+            text-decoration: none;
+
+            background-color: $bluegrey;
+            padding: 0.4rem 0.75rem;
+            border-radius: 0.25rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            span {
+                font-family: outfit;
+                color: black;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                font-weight: 800;
+            }
+
+            i {
+                color: blanchedalmond;
+                font-size: 1.25rem;
+            }
+        }
+
+    }
+
+    .navbar-toggler-icon {
+        i {
+            color: $black;
+            font-size: 2rem;
+        }
+    }
+
+    .navbar-light .navbar-toggler {
+        color: transparent;
+        border-color: transparent;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        background-image: none;
+    }
+
+}
+
+//
+//
+////navbar-responsive//
+
+@media (max-width:'992px') {
+
+    header {
+        .container-fluid {
+            height: 8vh;
+            position: relative;
+        }
+
+        .navbar-toggler-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+
+        .navbar-brand {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-btns {
+            position: absolute;
+            left: 0;
+
+            button {
+                background-color: $darkyellow;
+            }
+
+            .get_started {
+
+                background-color: $bluegrey;
+            }
+        }
+
+        .navbar-nav {
+            width: 30%;
+            padding: 1rem;
+
+        }
+
+        .navbar-collapse {
+            display: flex;
+            justify-content: end;
+            position: absolute;
+            width: 30%;
+            top: 76%;
+            right: 0%;
+
+            ul {
+                width: 100%;
+                align-items: end;
+                background-color: $bluegrey;
+
+                li {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    a {
+                        width: fit-content;
+                    }
+                }
+            }
+
+
+        }
+
+
+    }
+}
+
+////
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// STYLING HEROSECTION////
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-color: $offwhite;
+    position: relative;
+
+    .bg-shape {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        i {
+
+            font-size: 25rem;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(168, 167, 138, 1) 83%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.5;
+        }
+
+    }
+
+    .img_wrap {
+        position: absolute;
+        right: 10%;
+        bottom: 5%;
+        height: 60%;
+        z-index: 1;
+
+        img {
+            height: 100%;
+            object-fit: contain;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            background-color: lighten($color: $ash, $amount: 10%);
+            border-radius: 0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            z-index: -1;
+
+        }
+
+        .imgcard {
+            position: absolute;
+            width: 65%;
+            height: 35%;
+            background: linear-gradient(90deg, rgba(162, 194, 196, 1) 0%, rgba(168, 167, 138, 1) 70%);
+            border-radius: 0.5rem;
+            left: -45%;
+            bottom: 35%;
+            padding: 0 1rem;
+
+            h4,
+            h2,
+            p {
+                margin: 0;
+                font-family: outfit;
+            }
+
+            p {
+                font-size: small;
+            }
+        }
+    }
+
+    .textbox {
+        width: 100%;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        padding-left: 8%;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $bluegrey;
+
+        h3 {
+            background-color: $darkyellow;
+            display: inline;
+            padding: 0.25rem 0.5rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-family: outfit;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 3.8rem;
+            font-family: outfit;
+
+            span {
+                font-style: italic;
+                background: linear-gradient(90deg, rgba(162, 194, 196, 1) 0%, rgba(168, 167, 138, 1) 54%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+
+    .textbelow {
+        position: absolute;
+        width: 100%;
+        bottom: 5%;
+        padding-left: 8%;
+
+        p {
+            width: 30%;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: black;
+            padding: 0.4rem 0.75rem;
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            gap: 0.5rem;
+
+            i {
+                color: $darkyellow;
+                font-size: 1rem;
+
+            }
+
+            span {
+                font-family: outfit;
+                color: white;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+
+            }
+        }
+    }
+
+
+}
+
+////////////
+/// 
+/// 
+/// 
+/// 
+/// 
+/// STYLING COUNTER SECTION////
+.counter {
+    background-color: $offwhite;
+
+    .counter_inner {
+        display: flex;
+        justify-content: space-around;
+        font-family: outfit;
+        text-transform: uppercase;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        background: linear-gradient(90deg, rgba(162, 194, 196, 1) 0%, rgba(168, 167, 138, 0.7) 54%);
+
+        span {
+            display: block;
+            font-size: 0.9rem;
+            color: gray;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+
+}
+
+////
+/// 
+/// 
+/// 
+/// 
+/// 
+/// STYLING SECTION ABOUT US/////
+.aboutUs {
+    background-color: $offwhite;
+
+    .textbox {
+        width: 50%;
+
+        h3 {
+            background-color: $darkyellow;
+            display: inline;
+            padding: 0.25rem 0.5rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-family: outfit;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-family: outfit;
+        }
+
+        p {
+            font-size: small;
+            margin-top: 2rem;
+            width: 60%;
+        }
+
+        a {
+            text-decoration: none;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            span {
+                font-family: outfit;
+                color: black;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            i {
+                color: $darkyellow;
+            }
+        }
+    }
+
+    .txtBox-right {
+        position: relative;
+        width: 40%;
+        height: 50%;
+        border: 2px solid black;
+        border-radius: 1rem;
+        padding: 1rem;
+        font-family: outfit;
+
+        h2 {
+            font-size: 1.25rem;
+            text-transform: capitalize;
+        }
+
+        .activity {
+            display: flex;
+            justify-content: space-between;
+
+            .saleDescription {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                i {
+                    font-size: 2rem;
+                    color: $bluegrey
+                }
+
+                h3 {
+                    font-size: 1rem;
+
+                    span {
+                        color: $ash;
+                    }
+                }
+            }
+        }
+
+        .txtcard {
+            position: absolute;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(162, 194, 196, 1) 0%, rgba(168, 167, 138, 1) 70%);
+            border-radius: 0.5rem;
+            left: -15%;
+            bottom: -80%;
+            padding: 0 1rem;
+
+            h4,
+            h2,
+            p {
+                margin: 1rem 0;
+                font-family: outfit;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: small;
+
+                span {
+                    background-color: black;
+                    color: white;
+                    padding: 0 0.25rem;
+                    border-radius: 2rem;
+                }
+            }
+        }
+
+        .txtcard2 {
+            position: absolute;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(162, 194, 196, 1) 0%, rgba(168, 167, 138, 1) 70%);
+            border-radius: 0.5rem;
+            right: -10%;
+            bottom: -50%;
+            padding: 0 1rem;
+
+            h4,
+            h2,
+            p {
+                margin: 1rem 0;
+                font-family: outfit;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: small;
+
+                span {
+                    background-color: black;
+                    color: white;
+                    padding: 0 0.25rem;
+                    border-radius: 2rem;
+                }
+            }
+        }
+    }
+}
+
+////
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// STYLING SECTION TESTEMONIALS/////
+.testemonials {
+    background-color: $offwhite;
+    text-align: center;
+
+    .heading {
+        text-transform: uppercase;
+        background-color: $darkyellow;
+        display: inline;
+        padding: 0.3rem 1rem;
+        border-radius: 2rem;
+        font-family: outfit;
+        font-size: 1.5rem;
+    }
+
+    .swiper-slide {
+        border-radius: 1rem;
+
+        .textbox {
+            background: linear-gradient(90deg, rgba(162, 194, 196, 1) 0%, rgba(168, 167, 138, 0.7) 54%);
+            padding: 2rem;
+            text-align: start;
+            border-radius: 1rem;
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+
+                span {
+                    font-size: 0.7rem;
+                }
+            }
+
+            .rating {
+                width: fit-content;
+                gap: 0.5rem;
+                display: flex;
+                color: rgb(255, 208, 0);
+            }
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        &::after {
+            display: none;
+        }
+
+        i {
+            color: white;
+            background-color: $ash;
+            padding: 0.5rem;
+            border-radius: 50%;
+            border: 3px solid $darkyellow;
+
+        }
+    }
+
+    .swiper_navigation-btns {
+        margin-top: 3rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .btn-inner {
+            position: relative;
+            width: 6rem;
+        }
+    }
+
+}
+
+//////
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+///STYLING  SECTION TEAMS////
+.team {
+    width: 100%;
+    background-color: $offwhite;
+    font-family: outfit;
+
+    .textbox {
+        display: flex;
+        justify-content: space-around;
+
+        h2 {
+            width: 50%;
+            font-size: 3rem;
+        }
+
+        h5 {
+            width: 50%;
+            font-size: 0.9rem;
+
+            span {
+
+
+                a {
+
+                    text-decoration: none;
+                    margin-top: 3rem;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-family: outfit;
+                    color: black;
+                    text-transform: uppercase;
+                    font-size: 0.8rem;
+                    font-weight: 700;
+
+
+                    i {
+                        color: $darkyellow;
+                        font-size: 1.25rem;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .imgbox {
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            width: 49%;
+            height: 60vh;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    }
+
+}
+
+////
+/// 
+/// 
+/// 
+/// 
+/// STYLING FOOTER///
+footer {
+    font-family: outfit;
+    padding-top: 5rem;
+    background: rgb(162,194,196);
+    background: linear-gradient(90deg, rgba(162,194,196,1) 0%, rgb(255, 255, 255) 100%);
+    .textbox {
+
+        a {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            i {
+                font-size: 2rem;
+                color: $darkyellow;
+            }
+
+            span {
+                color: black;
+                font-family: outfit;
+                text-transform: capitalize;
+                font-size: 1.5rem;
+                font-weight: 650;
+            }
+        }
+        .fieldwrap{
+            margin: 0.5rem 0;
+            background-color: black;
+            width: fit-content;
+            padding: 0.45rem 0.7rem;
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            input{
+                background-color: black;
+                border: 0;
+                color: wheat;
+                &:focus-visible{
+                        outline: none;
+            
+                }
+                &::placeholder{
+                    font-size: 0.8rem;
+                }
+            }
+            i{
+                font-size: 1.5rem;
+                color: $darkyellow;
+            }
+        }
+
+        h2{
+            margin-top: 1rem;
+        }
+    }
+
+.txtBox-right{
+    ul{
+        list-style: none;
+        text-transform: uppercase;
+        li{
+            margin-bottom: 1rem;
+            h3{
+                font-size: 1rem;
+            }
+            a{
+                text-decoration: none;
+                color: $ash;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+
+}
